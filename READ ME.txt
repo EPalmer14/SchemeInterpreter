@@ -1,0 +1,26 @@
+READ ME
+
+Zeke Palmer
+CS 170 - Scheme Project
+
+type make to make the program.
+type ./scheme to run the program with user input.
+type make clean to clean the program of all make files.
+
+I was able to complete up to Part 3 as well as implement the the Part 3 functions bar cond.
+
+The S_Expression function builds a cons-cell structure recursively by keeping track of the current depth of the input list.
+
+The eval function take the built cons-cell structure and recursively evaluates it based on the input commands.
+
+The printSExp function calls a helper function that takes a cons-cell as an argument and also has an integer to keep track of when to print open parentheses. This helper function recursively prints a cons-cell structure.
+
+Various other functions are used to help determine the kind of cell and one function is used for each of the built in scheme commands.
+
+I tested my code using the input.txt supplied for Part 3, although it would only run on the first few lines because I do not have functions written for the others. For testing in Part 2 I used basic car, car, quote, and cons tests like:
+
+(car (a b c))
+(car (cdr (a b c)))
+(cons (quote (a b)) (quote (c d)))
+
+and other similar test commands. You will receive a segmentation fault error if you try to cdr a list with no cdr (ex. (cdr (quote (a))) since quote returns ( a ) and there is no cdr).
